@@ -4,6 +4,12 @@ const connectDB = require('./config/db.js'); // Import database connection funct
 
 const app = express();
 
+// Check if MONGO_URI is being read properly
+if (!process.env.MONGO_URI) {
+  console.error("❌ MONGO_URI is not defined. Check your .env file!");
+  process.exit(1); // Stop the server if no database URL
+}
+
 // Connect to MongoDB
 connectDB();
 
