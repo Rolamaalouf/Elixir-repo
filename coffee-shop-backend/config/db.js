@@ -13,8 +13,15 @@ const connectDB = async () => {
     process.exit(1); // Exit process if connection fails
   }
 };
-
+/**
+This line exports the connectDB function so that it can be imported and used in other parts of the application.
+In your server.js file, you will import and call this function to establish the connection to MongoDB.
+    const connectDB = require("./config/db");
+    connectDB();
+ */
 module.exports = connectDB;
+
+
 /*
 What’s happening inside connectDB:
 mongoose.connect():
