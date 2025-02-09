@@ -1,6 +1,8 @@
-require('dotenv').config(); // Load environment variables
 const express = require('express');
+require('dotenv').config(); // Load environment variables
 const connectDB = require('./config/db.js'); // Import database connection function
+
+const landingPageRoutes = require("./routes/landingPageRoutes");
 
 const app = express();
 
@@ -20,6 +22,8 @@ app.use(express.json()); // Allows JSON data parsing
 app.get("/", (req, res) => {
   res.send("Welcome to the Coffee Shop API ☕️");
 });
+//use Routes
+app.use("/api/landing-page", landingPageRoutes); //connect the landing page to the API 
 
 // Set PORT
 const PORT = process.env.PORT || 5000;
