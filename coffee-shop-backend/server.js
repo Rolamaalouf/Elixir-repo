@@ -2,12 +2,12 @@ require("dotenv").config(); // Load environment variables  //Loads environment v
 const express = require("express");
 const connectDB = require("./config/db.js"); // Import database connection function //connectDB: A function that connects to MongoDB (defined in config/db.js).
 const cors = require("cors"); //: Middleware that enables Cross-Origin Resource Sharing (CORS), allowing frontend applications on different domains to communicate with this backend.
-const aboutUsRoutes = require("./routes/aboutUsRoutes"); // Import API routes //aboutUsRoutes: Imports route handlers for the "About Us" API.
+const aboutUsRoutes = require("./routes/aboutUsRoutes.js"); // Import API routes //aboutUsRoutes: Imports route handlers for the "About Us" API.
 /**can be written as:
  *const dotenv = require("dotenv")
  dotenv.config(); // Load environment variables
  */
-const landingPageRoutes = require("./routes/landingPageRoutes");
+const landingPageRoutes = require("./routes/landingPageRoutes.js");
 const app = express(); //Initialize Express App , Creates an Express application instance.
 
 // Connect to MongoDB
