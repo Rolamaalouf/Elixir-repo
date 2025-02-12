@@ -8,6 +8,7 @@ const aboutUsRoutes = require("./routes/aboutUsRoutes.js"); // Import API routes
  dotenv.config(); // Load environment variables
  */
 const landingPageRoutes = require("./routes/landingPageRoutes.js");
+const menuRoutes = require("./routes/menuRoutes.js"); // Import menu routes
 const app = express(); //Initialize Express App , Creates an Express application instance.
 
 // Connect to MongoDB
@@ -26,6 +27,7 @@ app.use("/api/landing-page", landingPageRoutes); //connect the landing page to t
 
 // Use Routes
 app.use("/api/about-us", aboutUsRoutes); // Connect the About Us API  |Any request to http://localhost:5000/api/about-us will be handled by aboutUsRoutes.
+app.use("/api/menu", menuRoutes);
 
 // Set PORT
 const PORT = process.env.PORT || 5000; //sets the server port: Uses process.env.PORT (from .env file) if available. 
@@ -45,3 +47,4 @@ app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
       Test route at /.
       API routes at /api/about-us.
       The server starts listening on port 5000 (or a specified port). */
+
