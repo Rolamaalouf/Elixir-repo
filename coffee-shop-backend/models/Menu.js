@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const menuSchema = new mongoose.Schema({
+const MenuSchema = new mongoose.Schema({
   heroSection: {
     image: String,
     paragraph: String,
@@ -27,4 +27,6 @@ const menuSchema = new mongoose.Schema({
   ],
 });
 
-module.exports = mongoose.model("Menu", menuSchema);
+const Menu = mongoose.model("Menu", MenuSchema);
+module.exports = Menu;
+
