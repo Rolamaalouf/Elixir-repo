@@ -1,32 +1,33 @@
 const mongoose = require("mongoose");
 
-const MenuSchema = new mongoose.Schema({
+const menuSchema = new mongoose.Schema({
   heroSection: {
-    image: String,
-    paragraph: String,
+    image: { type: String },
+    paragraph: { type: String }
   },
-  images: [String], // Stores the two images on the page
+  images: [
+    {
+      type: String
+    }
+  ],
   bestSellers: [
     {
-      image: String,
-      description: String,
-    },
+      image: { type: String },
+      description: { type: String }
+    }
   ],
   menuCategories: [
     {
-      categoryName: String,
+      categoryName: { type: String },
+      image: { type: String },
       items: [
         {
-          name: String,
-          description: String,
-          price: Number,
-          image: String,
-        },
-      ],
-    },
-  ],
+          name: { type: String, required: true },
+          price: { type: Number, required: true }
+        }
+      ]
+    }
+  ]
 });
 
-const Menu = mongoose.model("Menu", MenuSchema);
-module.exports = Menu;
-
+module.exports = mongoose.model("Menu", menuSchema);
